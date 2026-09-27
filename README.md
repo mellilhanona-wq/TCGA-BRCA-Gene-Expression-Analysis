@@ -115,11 +115,21 @@ See:
 
 ### Differential Expression Analysis
 
-DESeq2 was used to identify genes with statistically significant differences in expression between primary tumor and normal samples.
+DESeq2 identified strong differences in gene expression between primary tumor and solid tissue normal samples.
+
+Among the most strongly upregulated genes were **COL10A1, MMP11, COL11A1, MMP13, and IBSP**, which are associated with extracellular matrix remodeling and tumor-associated tissue changes. Several cell-cycle and mitotic genes, including **NEK2, KIF4A, UBE2C, CDC25C, TPX2, CDK1, and NUF2**, were also strongly upregulated, consistent with increased proliferative activity in tumor samples.
 
 The complete exported DESeq2 results are available in:
 
 `results/BRCA_DESeq2_results.tsv`
+
+### Biological Interpretation
+
+The differential expression results show two prominent patterns: increased expression of extracellular matrix/remodeling genes and increased expression of genes involved in cell-cycle progression and mitosis.
+
+For example, **MMP11, COL10A1, COL11A1, and MMP13** showed strong upregulation, while **NEK2, UBE2C, CDC25C, TPX2, and CDK1** showed strong upregulation and very small adjusted p-values. These findings are consistent with biological processes commonly studied in breast cancer, including tumor-associated extracellular matrix remodeling and increased cellular proliferation.
+
+These observations represent transcriptomic associations from the tumor-versus-normal comparison and would require downstream pathway enrichment and additional experimental validation to determine their functional significance.
 
 ### Top Differentially Expressed Genes
 
@@ -144,7 +154,6 @@ A volcano plot was generated to visualize the relationship between statistical s
 See:
 
 `figures/Volcano_DESeq2_Tumor_vs_Normal.pdf`
-
 ## Reproducibility
 
 The analysis scripts are provided in the `scripts/` directory.
