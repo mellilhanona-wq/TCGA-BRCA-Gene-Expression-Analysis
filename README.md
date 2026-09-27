@@ -1,0 +1,186 @@
+# TCGA-BRCA Gene Expression Analysis
+
+## Overview
+
+This project demonstrates a cancer bioinformatics workflow for analyzing RNA-seq gene expression data from The Cancer Genome Atlas (TCGA) Breast Cancer dataset (TCGA-BRCA).
+
+The analysis compares gene expression between primary breast tumor samples and solid tissue normal samples using R and Bioconductor tools.
+
+The workflow includes:
+
+- RNA-seq expression data organization
+- Sample metadata preparation
+- Gene-level count matrix construction
+- Low-count gene filtering
+- Principal Component Analysis (PCA)
+- Differential gene expression analysis using DESeq2
+- Identification of the top differentially expressed genes
+- Heatmap visualization
+- Volcano plot visualization
+- Export of analysis results for reproducibility
+
+## Biological Objective
+
+The main objective is to identify genes whose expression differs between breast tumor and normal tissue samples.
+
+Differential gene expression analysis can help identify genes and biological processes associated with cancer and provides a foundation for downstream functional and pathway analysis.
+
+## Dataset
+
+The project uses RNA-seq data from TCGA-BRCA obtained through the Genomic Data Commons (GDC).
+
+Sample groups:
+
+- Primary Tumor: 1,111 samples
+- Solid Tissue Normal: 113 samples
+- Total: 1,224 samples
+
+The raw GDC data are not included in this repository because of their large size.
+
+## Analysis Workflow
+
+TCGA/GDC RNA-seq Data
+          |
+          v
+Sample Metadata
+          |
+          v
+Gene Count Matrix
+          |
+          v
+Low-count Filtering
+          |
+          v
+Exploratory Analysis
+          |
+          +----> PCA
+          |
+          v
+DESeq2 Differential Expression
+          |
+          +----> Volcano Plot
+          |
+          +----> Top Differentially Expressed Genes
+          |
+          v
+Heatmap of Top Genes
+
+## Tools and Technologies
+
+- R
+- Bioconductor
+- DESeq2
+- TCGAbiolinks
+- ggplot2
+- pheatmap
+- Linux / WSL
+- Git / GitHub
+
+## Project Structure
+
+TCGA-BRCA-Gene-Expression-Analysis/
+|
+├── figures/
+│   ├── Heatmap_Top50_DEGs.pdf
+│   ├── PCA_Tumor_vs_Normal.pdf
+│   └── Volcano_DESeq2_Tumor_vs_Normal.pdf
+|
+├── results/
+│   ├── BRCA_DESeq2_results.tsv
+│   ├── BRCA_sample_metadata.tsv
+│   ├── Heatmap_Top50_expression.tsv
+│   ├── PCA_coordinates.tsv
+│   └── Top50_DE_genes.tsv
+|
+├── scripts/
+│   ├── 01_build_expression_matrix.R
+│   ├── 02_filter_counts.R
+│   ├── 03_prepare_metadata.R
+│   ├── 04_run_DESeq2.R
+│   ├── 05_pca_analysis.R
+│   ├── 06_volcano_plot.R
+│   └── 07_heatmap.R
+|
+├── MANIFEST.txt
+├── TCGA_BRCA_1224_manifest.txt
+├── TCGA_BRCA_1224_query.tsv
+├── TCGA_BRCA_missing_414_manifest.txt
+└── README.md
+
+## Main Results
+
+### Principal Component Analysis
+
+PCA was used to explore global expression patterns and assess whether tumor and normal samples show separation based on their transcriptomic profiles.
+
+See:
+
+figures/PCA_Tumor_vs_Normal.pdf
+
+### Differential Expression Analysis
+
+DESeq2 was used to identify genes with statistically significant differences in expression between primary tumor and normal samples.
+
+The complete exported DESeq2 results are available in:
+
+results/BRCA_DESeq2_results.tsv
+
+### Top Differentially Expressed Genes
+
+The top 50 differentially expressed genes were extracted for visualization and further interpretation.
+
+See:
+
+results/Top50_DE_genes.tsv
+
+### Heatmap
+
+A heatmap was generated to visualize expression patterns of the top 50 differentially expressed genes across samples.
+
+See:
+
+figures/Heatmap_Top50_DEGs.pdf
+
+### Volcano Plot
+
+A volcano plot was generated to visualize the relationship between statistical significance and magnitude of gene-expression changes.
+
+See:
+
+figures/Volcano_DESeq2_Tumor_vs_Normal.pdf
+
+## Reproducibility
+
+The analysis scripts are provided in the scripts/ directory.
+
+The scripts are numbered according to the analysis workflow so that the project can be followed from data preparation through visualization.
+
+Large raw data files and expression matrices are intentionally excluded from the repository.
+
+## Skills Demonstrated
+
+This project demonstrates practical experience with:
+
+- Cancer transcriptomics
+- RNA-seq data analysis
+- Gene expression matrices
+- Metadata handling
+- Data preprocessing
+- Differential expression analysis
+- Statistical analysis
+- PCA
+- Data visualization
+- R programming
+- Bioconductor
+- Linux/WSL
+- Reproducible bioinformatics workflows
+- Git and GitHub
+
+## Author
+
+Hanane Mellil
+
+Bachelor's student in Biotechnology Engineering
+
+Interested in Bioinformatics, Computational Biology, Genomics, and Cancer Research.
+

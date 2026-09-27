@@ -1,0 +1,16 @@
+# Raw TCGA/GDC data
+GDC_download/
+
+# Large expression matrices
+results/BRCA_counts_matrix.tsv
+results/BRCA_filtered_counts_matrix.tsv
+
+# Temporary / system files
+.Rhistory
+.RData
+.Rproj.user/
+*.log
+
+# Installer archives
+*.zip
+
